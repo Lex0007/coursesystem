@@ -1,13 +1,18 @@
 package at.hakimst.ui;
 
+import at.hakimst.dataaccess.MyCourseRepository;
+import at.hakimst.dataaccess.MySqlCourseRepository;
+
 import java.util.Scanner;
 
 public class Cli {
 
     Scanner scan;
+    MySqlCourseRepository repo;
 
-    public Cli() {
+    public Cli(MyCourseRepository repo) {
         this.scan = new Scanner(System.in);
+        this.repo = repo;
     }
 
     public void start() {
