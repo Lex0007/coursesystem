@@ -123,3 +123,5 @@ Eine Klasse **MySqlBuchungRepository**, die die Methoden des Interfaces implemen
 ### UML-Diagramme:
 1. **Klasse Buchung** und ihre Beziehung zu **Student** und **Kurs**.
 2. **Das BuchungRepository-Interface** und seine Implementierung.
+
+![UML Diagramm](image/diagramm.jpg)
