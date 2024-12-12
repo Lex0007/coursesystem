@@ -81,3 +81,45 @@ Die Klasse `Course` repräsentiert die Daten eines Kurses. Sie speichert Details
 - **Getter und Setter:**
     - Validieren Eingabewerte (z. B. Name muss mindestens 2 Zeichen haben, Enddatum nach Startdatum).
 - **`toString()`**: Gibt eine lesbare Darstellung des Kurses zurück.
+
+
+
+
+# Verbesserungsvorschläge
+
+# Buchung Management
+
+## Domänenklasse: Buchung
+
+### Attribute:
+- **buchungId** (Primärschlüssel)
+- **studentId** (Fremdschlüssel zur Student-Tabelle)
+- **kursId** (Fremdschlüssel zur Kurs-Tabelle)
+- **buchungsdatum** (Datum der Buchung)
+
+## DAO für Buchungen
+
+### Interface: BuchungRepository
+Ein eigenes Interface **BuchungRepository**, abgeleitet von einem generischen **BaseRepository**.
+
+#### Methoden:
+- `buchungErstellen(Buchung buchung)`
+- `buchungenFuerStudent(int studentId)`
+- `buchungenFuerKurs(int kursId)`
+
+### MySQL-Implementierung
+
+Eine Klasse **MySqlBuchungRepository**, die die Methoden des Interfaces implementiert und CRUD-Operationen auf der Tabelle `buchung` ausführt.
+
+## Erweiterung der CLI
+
+### Neue Optionen:
+- **Buchung erstellen**
+- **Alle Buchungen eines Studenten anzeigen**
+- **Alle Buchungen eines Kurses anzeigen**
+
+## UML-Diagramme zur Veranschaulichung
+
+### UML-Diagramme:
+1. **Klasse Buchung** und ihre Beziehung zu **Student** und **Kurs**.
+2. **Das BuchungRepository-Interface** und seine Implementierung.
